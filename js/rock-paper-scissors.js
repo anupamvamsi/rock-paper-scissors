@@ -1,5 +1,5 @@
 // three choices r p s
-// numChances 
+// numChances
 // winningNum = parseInt(numChances / 2) + 1
 // checkWinner() to listen after currentChanceNumber >= winningNum
 // to win: if playerWinNum == winningNum or computerWinNum == winningNum
@@ -35,35 +35,83 @@ rock (0)     | scissors (2)   | computer |  -2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
+const gameChoices = {
+  rock: 0,
+  paper: 1,
+  scissors: 2,
+};
+
+const gameResults = {
+  draw: 0,
+  playerWin: 1,
+  computerWin: 2,
+};
+
+const choicesNew = document.querySelectorAll(".choice");
+choicesNew.forEach((choice) => choice.addEventListener("click", playerPlay));
+
+const playArea = document.querySelector(".play-area");
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const gameChoices = {
-  'rock': 0,
-  'paper': 1,
-  'scissors': 2,
-};
-
-const gameResults = {
-  'draw': 0,
-  'playerWin': 1,
-  'computerWin': 2
-};
-
-function computerPlay() {
-  let choice = random(0, 2);
-  return choice;
+function playerPlay(e) {
+  playArea.textContent = "";
+  console.log(this.id);
+  displayPlayerChoice(this.id);
+  computerPlay();
 }
 
-function getChoice(choice) {
+function computerPlay() {
+  console.log("computer playing...");
+  let choice = random(0, 2);
+  displayComputerChoice(choice);
+}
+
+function displayPlayerChoice(choice) {
+  console.log("displaying choice...");
+  let choiceImg = document.createElement("img");
+
+  switch (choice) {
+    case "rock":
+      console.log("ROCKYY");
+      choiceImg.src = "./images/nobg_color_rock.svg";
+      playArea.appendChild(choiceImg);
+      return gameChoices.rock;
+    case "paper":
+      console.log("PYAPER");
+      choiceImg.src = "./images/nobg_color_paper.svg";
+      playArea.appendChild(choiceImg);
+      return gameChoices.paper;
+    case "scissors":
+      console.log("SCIZOR");
+      choiceImg.src = "./images/nobg_color_scissors.svg";
+      playArea.appendChild(choiceImg);
+      return gameChoices.scissors;
+  }
+}
+
+function displayComputerChoice(choice) {
+  console.log("displaying computer choice...");
+  let choiceImg = document.createElement("img");
+
   switch (choice) {
     case gameChoices.rock:
-      return 'ROCK';
+      console.log("rock!");
+      choiceImg.src = "./images/nobg_color_rock.svg";
+      playArea.appendChild(choiceImg);
+      break;
     case gameChoices.paper:
-      return 'PAPER';
+      console.log("paper!");
+      choiceImg.src = "./images/nobg_color_paper.svg";
+      playArea.appendChild(choiceImg);
+      break;
     case gameChoices.scissors:
-      return 'SCISSORS';
+      console.log("scissors!");
+      choiceImg.src = "./images/nobg_color_scissors.svg";
+      playArea.appendChild(choiceImg);
+      break;
   }
 }
 
@@ -72,11 +120,9 @@ function evaluateRound(computerChoice, playerChoice) {
 
   if (eval == 0) {
     return gameResults.draw;
-  }
-  else if (eval == -1 || eval == 2) {
+  } else if (eval == -1 || eval == 2) {
     return gameResults.playerWin;
-  }
-  else if (eval == 1 || eval == -2) {
+  } else if (eval == 1 || eval == -2) {
     return gameResults.computerWin;
   }
 }
@@ -84,74 +130,63 @@ function evaluateRound(computerChoice, playerChoice) {
 function evaluateResult(result) {
   switch (result) {
     case gameResults.draw:
-      return 'DRAW!';
+      return "DRAW!";
     case gameResults.playerWin:
-      return 'WIN!';
+      return "WIN!";
     case gameResults.computerWin:
-      return 'WIN! Oops. I meant, the computer won.';
+      return "WIN! Oops. I meant, the computer won.";
   }
 }
 
 function checkWinner(playerWins, computerWins) {
   if (playerWins > computerWins) {
     return gameResults.playerWin;
-  }
-  else if (playerWins < computerWins) {
+  } else if (playerWins < computerWins) {
     return gameResults.computerWin;
-  }
-  else {
+  } else {
     return gameResults.draw;
   }
 }
 
 function game() {
-  let numRounds = parseInt(prompt('How many rounds do you want to play? Choose between 1, 3, 5, 7.'));
-
-  while (!(numRounds == 1 || numRounds == 3 || numRounds == 5 || numRounds == 7)) {
-    console.log(numRounds);
-    numRounds = parseInt(prompt('Invalid input, please choose the number of chances. Valid choices: 1, 3, 5, 7.'));
-  }
-
-  const winningRounds = parseInt((numRounds) / 2) + 1;
   let winsComputer = 0;
   let winsPlayer = 0;
 
-  for (let currentRound = 1; currentRound <= numRounds; currentRound++) {
-    let computerChoice = computerPlay();
-    let playerChoice = (parseInt(prompt('Choose between rock (0), paper (1) or scissors (2)')));
+  let computerChoice = computerPlay();
+  let playerChoice = playerPlay();
 
-    console.log(`currentRound: ${currentRound}, winningRounds: ${winningRounds}`);
-    console.log(`Player chose: ${getChoice(playerChoice)}`);
-    console.log(`Computer chose: ${getChoice(computerChoice)}`);
+  console.log(`func: ${playerChoice}`);
 
-    let roundResult = evaluateRound(computerChoice, playerChoice);
+  // console.log(`currentRound: ${currentRound}, winningRounds: ${winningRounds}`);
+  // console.log(`Player chose: ${getChoice(playerChoice)}`);
+  // console.log(`Computer chose: ${getChoice(computerChoice)}`);
 
-    console.log(`roundResult ${roundResult}`)
+  let roundResult = evaluateRound(computerChoice, playerChoice);
 
-    switch (roundResult) {
-      case gameResults.playerWin:
-        winsPlayer++;
-        break;
-      case gameResults.computerWin:
-        winsComputer++;
-        break;
-      default:
-        console.log('Round is a draw.');
-    }
+  console.log(`roundResult ${roundResult}`);
 
-    console.log(winsPlayer, winsComputer);
-
-    if (currentRound >= winningRounds) {
-      var gameResult = checkWinner(winsPlayer, winsComputer);
-
-      if (winsPlayer >= winningRounds || winsComputer >= winningRounds) // if someone won => gameResult > 0, since playerWin and computerWin are 1 and 2 respectively
-        break;
-
-    }
+  switch (roundResult) {
+    case gameResults.playerWin:
+      winsPlayer++;
+      break;
+    case gameResults.computerWin:
+      winsComputer++;
+      break;
+    default:
+      console.log("Round is a draw.");
   }
 
-  console.log(typeof gameResult);
-  console.log(evaluateResult(gameResult));
-}
+  console.log(winsPlayer, winsComputer);
 
-game();
+  // if (currentRound >= winningRounds) {
+  //   var gameResult = checkWinner(winsPlayer, winsComputer);
+
+  //   if (winsPlayer >= winningRounds || winsComputer >= winningRounds)
+  //     // if someone won => gameResult > 0, since playerWin and computerWin are 1 and 2 respectively
+  //     // break;
+  // }
+
+  // console.log(typeof gameResult);
+  // console.log(evaluateResult(gameResult));
+}
+// game();
