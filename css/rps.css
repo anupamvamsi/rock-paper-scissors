@@ -9,13 +9,39 @@ html {
 }
 
 body {
+  font-family: 'Courier New', Courier, monospace;
+  
   display: flex;
   flex-direction: column;
+
+  align-items: center;
 
   /* margin: 0; */
 }
 
 .title {
-  font-family: 'Courier New', Courier, monospace;
   color: gray;
+}
+
+.players-div {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+}
+
+.choices-div {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  align-items: center;
+}
+
+.choice {
+  transition: all 0.07s ease;
+}
+
+.choice-maybe {
+  transform: scale(1.1);
+  /* box-shadow: 0 0 1rem cyan; */
 }
