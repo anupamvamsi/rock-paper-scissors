@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" href="./css/rps.css" />
-    <!-- <script src="./js/rock-paper-scissors.js" defer></script> -->
+    <script src="./js/rock-paper-scissors.js" defer></script>
     <!-- <script src="./js/example.js" defer></script>
   <script src="./js/events.js" defer></script> -->
     <script src="./js/choice-manip.js" defer></script>
@@ -16,34 +16,39 @@
     <div class="players-div">
       <img
         class="player"
-        src="./images/player.svg"
+        src="./images/nobg_player.svg"
         alt="player image"
-        width="300rem"
+        width="180rem"
       />
       <h1>VS</h1>
       <img
         class="player"
-        src="./images/computer.svg"
+        src="./images/nobg_computer.svg"
         alt="computer image"
-        width="300rem"
+        height="190.61rem"
       />
     </div>
 
-    <p class="choices-p">PLAYER CHOICES</p>
+    <div class="play-area"></div>
+
+    <!-- <p class="choices-p">PLAYER CHOICES</p> -->
     <div class="choices-div">
       <img
+        id="rock"
         class="choice"
         src="./images/rock.svg"
         alt="rock choice"
         width="200rem"
       />
       <img
+        id="paper"
         class="choice"
         src="./images/paper.svg"
         alt="paper choice"
         width="200rem"
       />
       <img
+        id="scissors"
         class="choice"
         src="./images/scissors.svg"
         alt="scissors choice"
