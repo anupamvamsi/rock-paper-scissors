@@ -20,14 +20,22 @@ body {
 }
 
 .title {
-  color: gray;
+  color: #56d6ce;
+  font-size: 4rem;
 }
 
 .players-div {
   display: flex;
   justify-content: center;
-  gap: 5rem;
   align-items: center;
+  gap: 5rem;
+  margin: 2rem;
+}
+
+.play-area {
+  display: flex;
+  height: 10rem;
+  margin: 2rem;
 }
 
 .choices-div {
