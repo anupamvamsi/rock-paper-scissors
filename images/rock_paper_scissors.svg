@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="rock_paper_scissors.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.74029882"
+     inkscape:cx="396.46153"
+     inkscape:cy="561.93525"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     style="display:inline" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     style="display:inline">
+    <path
+       id="path6303"
+       style="display:inline;fill:#e6f5f4;stroke-width:0.873071;stroke-miterlimit:10;stop-color:#000000"
+       d="M 173.30461,136.88447 A 67.66893,67.66893 0 0 1 105.63568,204.55341 67.66893,67.66893 0 0 1 37.966746,136.88447 67.66893,67.66893 0 0 1 105.63568,69.215548 67.66893,67.66893 0 0 1 173.30461,136.88447 Z" />
+    <path
+       id="path2492"
+       style="fill:#b0ede9;stroke-width:0.187308;stroke-miterlimit:10;stop-color:#000000"
+       d="m 122.2874,118.65705 a 16.854191,16.854191 0 0 1 -16.85419,16.85418 16.854191,16.854191 0 0 1 -16.854189,-16.85418 16.854191,16.854191 0 0 1 16.854189,-16.8542 16.854191,16.854191 0 0 1 16.85419,16.8542 z" />
+    <path
+       id="path6199"
+       style="fill:#b0ede9;stroke-width:0.231;stroke-miterlimit:10;stop-color:#000000"
+       d="m 135.45487,168.15706 a 30.021662,30.021662 0 0 0 -15.01083,-25.99953 30.021662,30.021662 0 0 0 -30.021669,0 30.021662,30.021662 0 0 0 -15.01083,25.99953 h 30.021669 z" />
+  </g>
+</svg>
