@@ -51,39 +51,71 @@ const choicesNew = document.querySelectorAll(".choice");
 choicesNew.forEach((choice) => choice.addEventListener("click", playerPlay));
 
 const playArea = document.querySelector(".play-area");
+const winnerText = document.querySelector(".win-text");
+
+const human = document.querySelector("#human");
+const humanOriginalSrc = human.src;
+const computer = document.querySelector("#computer");
+const computerOriginalSrc = computer.src;
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// this function is triggered on a click event of one of rock, paper and scissors
 function playerPlay(e) {
   playArea.textContent = "";
-  console.log(this.id);
-  displayPlayerChoice(this.id);
-  computerPlay();
+  human.src = humanOriginalSrc;
+  computer.src = computerOriginalSrc;
+  human.classList.remove("player-lost");
+  computer.classList.remove("player-lost");
+  game(e); // main game
 }
 
 function computerPlay() {
   let choice = random(0, 2);
   displayComputerChoice(choice);
+  return choice;
 }
 
-function displayPlayerChoice(choice) {
+// function displayCountdown() {
+//   const count = document.createElement("h3");
+//   playArea.appendChild(count);
+//   let i = 3;
+//   let countdown = setInterval(function () {
+//     if (i <= 0) {
+//       clearInterval(countdown);
+//     } else {
+//       count.textContent = i;
+//     }
+//     i--;
+//   }, 1000);
+//   // playArea.removeChild(count);
+// }
+
+function game(e) {
+  let playerChoice = displayAndGetPlayerChoice(e.target.id);
+  let computerChoice = computerPlay();
+
+  let roundResult = evaluateRound(computerChoice, playerChoice);
+  let result = evaluateResult(roundResult);
+
+  // winnerText.textContent = result;
+}
+
+function displayAndGetPlayerChoice(choice) {
   let choiceImg = document.createElement("img");
 
   switch (choice) {
     case "rock":
-      console.log("PLAYER CHOICE: ROCKYY");
       choiceImg.src = "./images/nobg_color_rock.svg";
       playArea.appendChild(choiceImg);
       return gameChoices.rock;
     case "paper":
-      console.log("PLAYER CHOICE: PYAPER");
       choiceImg.src = "./images/nobg_color_paper.svg";
       playArea.appendChild(choiceImg);
       return gameChoices.paper;
     case "scissors":
-      console.log("PLAYER CHOICE: SCIZOR");
       choiceImg.src = "./images/nobg_color_scissors.svg";
       playArea.appendChild(choiceImg);
       return gameChoices.scissors;
@@ -95,17 +127,14 @@ function displayComputerChoice(choice) {
 
   switch (choice) {
     case gameChoices.rock:
-      console.log("COMPUTER CHOICE: rock!");
       choiceImg.src = "./images/nobg_color_rock.svg";
       playArea.appendChild(choiceImg);
       break;
     case gameChoices.paper:
-      console.log("COMPUTER CHOICE: paper!");
       choiceImg.src = "./images/nobg_color_paper.svg";
       playArea.appendChild(choiceImg);
       break;
     case gameChoices.scissors:
-      console.log("COMPUTER CHOICE: scissors!");
       choiceImg.src = "./images/nobg_color_scissors.svg";
       playArea.appendChild(choiceImg);
       break;
@@ -116,10 +145,18 @@ function evaluateRound(computerChoice, playerChoice) {
   let eval = computerChoice - playerChoice;
 
   if (eval == 0) {
+    human.src = human.src.replace("images/nobg_", "images/nobg_draw_");
+    computer.src = computer.src.replace("images/nobg_", "images/nobg_draw_");
     return gameResults.draw;
   } else if (eval == -1 || eval == 2) {
+    human.src = human.src.replace("images/nobg_", "images/nobg_win_");
+    computer.src = computer.src.replace("images/nobg_", "images/nobg_lose_");
+    computer.classList.add("player-lost");
     return gameResults.playerWin;
   } else if (eval == 1 || eval == -2) {
+    computer.src = computer.src.replace("images/nobg_", "images/nobg_win_");
+    human.src = human.src.replace("images/nobg_", "images/nobg_lose_");
+    human.classList.add("player-lost");
     return gameResults.computerWin;
   }
 }
@@ -144,46 +181,3 @@ function checkWinner(playerWins, computerWins) {
     return gameResults.draw;
   }
 }
-
-function game() {
-  let winsComputer = 0;
-  let winsPlayer = 0;
-
-  let computerChoice = computerPlay();
-  let playerChoice = playerPlay();
-
-  console.log(`func: ${playerChoice}`);
-
-  // console.log(`currentRound: ${currentRound}, winningRounds: ${winningRounds}`);
-  // console.log(`Player chose: ${getChoice(playerChoice)}`);
-  // console.log(`Computer chose: ${getChoice(computerChoice)}`);
-
-  let roundResult = evaluateRound(computerChoice, playerChoice);
-
-  console.log(`roundResult ${roundResult}`);
-
-  switch (roundResult) {
-    case gameResults.playerWin:
-      winsPlayer++;
-      break;
-    case gameResults.computerWin:
-      winsComputer++;
-      break;
-    default:
-      console.log("Round is a draw.");
-  }
-
-  console.log(winsPlayer, winsComputer);
-
-  // if (currentRound >= winningRounds) {
-  //   var gameResult = checkWinner(winsPlayer, winsComputer);
-
-  //   if (winsPlayer >= winningRounds || winsComputer >= winningRounds)
-  //     // if someone won => gameResult > 0, since playerWin and computerWin are 1 and 2 respectively
-  //     // break;
-  // }
-
-  // console.log(typeof gameResult);
-  // console.log(evaluateResult(gameResult));
-}
-// game();
