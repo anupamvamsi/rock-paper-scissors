@@ -32,6 +32,10 @@ body {
   margin: 2rem;
 }
 
+.player-lost {
+  width: 8rem;
+}
+
 .play-area {
   display: flex;
   justify-content: center;
