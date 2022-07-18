@@ -64,28 +64,26 @@ function playerPlay(e) {
 }
 
 function computerPlay() {
-  console.log("computer playing...");
   let choice = random(0, 2);
   displayComputerChoice(choice);
 }
 
 function displayPlayerChoice(choice) {
-  console.log("displaying choice...");
   let choiceImg = document.createElement("img");
 
   switch (choice) {
     case "rock":
-      console.log("ROCKYY");
+      console.log("PLAYER CHOICE: ROCKYY");
       choiceImg.src = "./images/nobg_color_rock.svg";
       playArea.appendChild(choiceImg);
       return gameChoices.rock;
     case "paper":
-      console.log("PYAPER");
+      console.log("PLAYER CHOICE: PYAPER");
       choiceImg.src = "./images/nobg_color_paper.svg";
       playArea.appendChild(choiceImg);
       return gameChoices.paper;
     case "scissors":
-      console.log("SCIZOR");
+      console.log("PLAYER CHOICE: SCIZOR");
       choiceImg.src = "./images/nobg_color_scissors.svg";
       playArea.appendChild(choiceImg);
       return gameChoices.scissors;
@@ -93,22 +91,21 @@ function displayPlayerChoice(choice) {
 }
 
 function displayComputerChoice(choice) {
-  console.log("displaying computer choice...");
   let choiceImg = document.createElement("img");
 
   switch (choice) {
     case gameChoices.rock:
-      console.log("rock!");
+      console.log("COMPUTER CHOICE: rock!");
       choiceImg.src = "./images/nobg_color_rock.svg";
       playArea.appendChild(choiceImg);
       break;
     case gameChoices.paper:
-      console.log("paper!");
+      console.log("COMPUTER CHOICE: paper!");
       choiceImg.src = "./images/nobg_color_paper.svg";
       playArea.appendChild(choiceImg);
       break;
     case gameChoices.scissors:
-      console.log("scissors!");
+      console.log("COMPUTER CHOICE: scissors!");
       choiceImg.src = "./images/nobg_color_scissors.svg";
       playArea.appendChild(choiceImg);
       break;

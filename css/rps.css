@@ -34,19 +34,32 @@ body {
 
 .play-area {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17rem;
+
   height: 10rem;
   margin: 2rem;
+  /* padding: 1rem; */
+}
+
+.play-area img {
+  width: 8rem;
 }
 
 .choices-div {
   display: flex;
   justify-content: center;
-  gap: 5rem;
   align-items: center;
+  gap: 5rem;
 }
 
 .choice {
   transition: all 0.07s ease;
+}
+
+.choice:hover {
+  cursor: pointer;
 }
 
 .choice-maybe {
