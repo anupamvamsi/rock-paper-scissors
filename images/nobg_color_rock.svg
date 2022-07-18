@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="76.606346mm"
-   height="98.127243mm"
-   viewBox="0 0 76.606346 98.127243"
+   width="85.872093mm"
+   height="109.996mm"
+   viewBox="0 0 85.872093 109.996"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
@@ -31,7 +31,7 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer12"
      inkscape:snap-bbox="true"
      inkscape:bbox-paths="true"
      inkscape:bbox-nodes="true"
@@ -49,7 +49,7 @@
     <inkscape:grid
        type="xygrid"
        id="grid6350"
-       originx="-29.245015"
+       originx="-29.245017"
        originy="-19.855309" />
   </sodipodi:namedview>
   <defs
@@ -110,34 +110,34 @@
      id="layer2"
      inkscape:label="bg"
      style="display:inline"
-     transform="translate(-65.961761,-87.820858)" />
+     transform="translate(-65.961763,-87.820858)" />
   <g
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="rockout"
      style="display:inline"
-     transform="translate(-29.245015,-19.85531)" />
+     transform="translate(-29.245017,-19.85531)" />
   <g
      inkscape:groupmode="layer"
      id="layer11"
      inkscape:label="rockoutears"
      style="display:inline"
-     transform="translate(-29.245015,-19.85531)" />
+     transform="translate(-29.245017,-19.85531)" />
   <g
      inkscape:groupmode="layer"
      id="layer13"
      inkscape:label="grin"
      style="display:inline"
-     transform="translate(-29.245015,-19.85531)" />
+     transform="translate(-29.245017,-19.85531)" />
   <g
      inkscape:groupmode="layer"
      id="layer12"
      inkscape:label="rockmouth"
      style="display:inline"
-     transform="translate(-29.245015,-19.85531)">
+     transform="translate(-29.245017,-19.85531)">
     <g
        id="g27788"
-       transform="matrix(1.1303062,0,0,1.1303062,-13.666243,-4.2204575)">
+       transform="matrix(1.2670198,0,0,1.2670198,-18.856475,-7.1324865)">
       <path
          style="display:inline;fill:#e28d6e;fill-opacity:1;stroke:#000000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 44.962197,53.648878 3.411727,-8.971576 6.008466,-11.427606 2.836747,-3.135413 14.18394,-6.918222 7.73957,-0.631801 8.59249,2.400844 7.13936,6.318012 4.991216,6.949814 2.906287,9.413838 0.44226,12.256943 -0.56862,5.43349 -0.28503,1.696991 -0.32422,2.9951 -0.14891,2.76316 -0.50545,3.41173 -1.389957,4.29625 -1.389957,4.327838 -0.442259,1.200419 -0.3159,1.168833 -2.40084,7.26571 -3.34855,3.980353 -6.44437,5.117615 -6.63391,3.28536 -9.09794,-0.56863 -9.66656,-4.35944 -9.603379,-5.307128 -7.076173,-12.95193 0.947702,-8.97157 z"
